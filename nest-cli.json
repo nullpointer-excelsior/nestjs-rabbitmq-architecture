@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/worker/src",
+  "monorepo": true,
+  "root": "apps/worker",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/worker/tsconfig.app.json"
+  },
+  "projects": {
+    "worker": {
+      "type": "application",
+      "root": "apps/worker",
+      "entryFile": "main",
+      "sourceRoot": "apps/worker/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/worker/tsconfig.app.json"
+      }
+    },
+    "recovery": {
+      "type": "application",
+      "root": "apps/recovery",
+      "entryFile": "main",
+      "sourceRoot": "apps/recovery/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/recovery/tsconfig.app.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    },
+    "producer": {
+      "type": "application",
+      "root": "apps/producer",
+      "entryFile": "main",
+      "sourceRoot": "apps/producer/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/producer/tsconfig.app.json"
+      }
+    }
+  }
+}
